@@ -26,14 +26,14 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   justify-content: center;
   align-items:center;
 }
-/* Colours for each box */
 
-.box1 { background:grey;}
+/* Colours for each box */
+.clickHandler { background:grey;}
 .box2 { background:pink;}
 .box3 { background:lightblue;}
 
 
-.box1{
+.clickHandler{
   color:white;
   margin: 20px;
   font-size: 20px;
@@ -43,7 +43,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   cursor: pointer;
 }
 
-.box1:hover{
+.clickHandler:hover{
   background:#3498db;
   margin: 20px;
   font-size: 20px;
