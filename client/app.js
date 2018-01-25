@@ -8,7 +8,7 @@ const updateInputField = string => {
 };
 
 const changeDisplayMsg = () => {
-  clickHandler.textContent = 'With out space!';
+  clickHandler.textContent = 'Enter anything!!';
 };
 
 const changeDisplayMsgBack = () => {
