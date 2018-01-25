@@ -2,20 +2,20 @@ const clickHandler = document.querySelector('.clickHandler');
 const outputField = document.querySelector('input[name=response]');
 const inputString = document.querySelector('input[name=request]');
 
-const updateInputField = function(string) {
+const updateInputField = string => {
   outputField.value = string;
   inputString.value = '';
 };
 
-const changeDisplayMsg = function() {
+const changeDisplayMsg = () => {
   clickHandler.textContent = 'With out space!';
 };
 
-const changeDisplayMsgBack = function() {
+const changeDisplayMsgBack = () => {
   clickHandler.textContent = 'I will sort your string!';
 };
 
-const postRequest = function(string) {
+const postRequest = string => {
   let data = { inputStr: string.value };
   fetch('/api/sort', {
     method: 'POST',
