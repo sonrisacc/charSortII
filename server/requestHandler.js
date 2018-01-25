@@ -1,7 +1,8 @@
 const sortFunction = function(input) {
   let result = input
     .split('')
-    .sort((a, b) => a < b)
+    .sort()
+    .reverse()
     .join('');
   return result;
 };
