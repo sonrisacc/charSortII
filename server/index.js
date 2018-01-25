@@ -5,7 +5,7 @@ const router = require('./routes/index');
 const app = express();
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: true }));
-app.use(express.static('client'));
+app.use(express.static('dist'));
 
 app.use('/api', router);
 

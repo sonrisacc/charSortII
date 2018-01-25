@@ -1,3 +1,5 @@
+const test = require('./helper/util.js');
+
 const clickHandler = document.querySelector('.clickHandler');
 const outputField = document.querySelector('input[name=response]');
 const inputString = document.querySelector('input[name=request]');
@@ -16,6 +18,7 @@ const changeDisplayMsgBack = () => {
 };
 
 const postRequest = string => {
+  test();
   let data = { inputStr: string.value };
   fetch('/api/sort', {
     method: 'POST',

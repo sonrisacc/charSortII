@@ -11,7 +11,7 @@ logs
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 build/
-dist/
+dist/bundle.js
 
 # Dependency directorys
 node_modules/
