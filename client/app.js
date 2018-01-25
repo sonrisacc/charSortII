@@ -7,6 +7,14 @@ const updateInputField = function(string) {
   inputString.value = '';
 };
 
+const changeDisplayMsg = function() {
+  clickHandler.textContent = 'With out space!';
+};
+
+const changeDisplayMsgBack = function() {
+  clickHandler.textContent = 'I will sort your string!';
+};
+
 const postRequest = function(string) {
   let data = { inputStr: string.value };
   fetch('/api/sort', {
@@ -21,4 +29,10 @@ const postRequest = function(string) {
     .then(res => updateInputField(res.body));
 };
 
+clickHandler.addEventListener('mouseenter', () => changeDisplayMsg());
+clickHandler.addEventListener('mouseleave', () => changeDisplayMsgBack());
 clickHandler.addEventListener('click', () => postRequest(inputString));
+
+document.addEventListener('keypress', event => {
+  if (event.key == 'Enter') postRequest(inputString);
+});
