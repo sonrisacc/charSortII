@@ -18,9 +18,7 @@ const postRequest = function(string) {
   })
     .then(res => res.json())
     .catch(error => console.error('Error:', error))
-    .then(res => {
-      updateInputField(res.body);
-    });
+    .then(res => updateInputField(res.body));
 };
 
 clickHandler.addEventListener('click', () => postRequest(inputString));
