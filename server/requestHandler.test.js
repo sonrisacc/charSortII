@@ -1,5 +1,9 @@
 const sortFunction = require('./requestHandler');
 
+test('shoud ignore space', () => {
+  expect(sortFunction('ab c')).toBe('cba');
+});
+
 test('shoud sort decending order', () => {
   expect(sortFunction('abc')).toBe('cba');
 });

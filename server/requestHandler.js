@@ -13,12 +13,12 @@ const sortFunction = function(input) {
       resultArr.push(cur.toLowerCase());
     } else if (cur.match(numbs)) {
       numsArr.push(cur);
-    } else {
+    } else if (cur !== ' ') {
       everythingElseArr.push(cur);
     }
   }
 
-  resultArr = resultArr.sort((a, b) => a < b);
+  resultArr = resultArr.sort().reverse();
   numsArr = numsArr.sort((a, b) => a < b);
   return [...resultArr, ...numsArr, ...everythingElseArr].join('');
 };
