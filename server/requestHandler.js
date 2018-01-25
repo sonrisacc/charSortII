@@ -1,26 +1,19 @@
 const sortByLetters = function(input) {
-  const lowCase = /[a-z]/;
-  const upCase = /[A-Z]/;
+  const letters = /[A-Za-z]/;
   const numbs = /[0-9]/;
 
   let string = input.trim().split('');
   let resultArr = [];
   let numsArr = [];
-  let everythingElseArr = [];
 
   for (let cur of string) {
-    if (cur.match(lowCase) || cur.match(upCase)) {
-      resultArr.push(cur.toLowerCase());
-    } else if (cur.match(numbs)) {
-      numsArr.push(cur);
-    } else if (cur !== ' ') {
-      everythingElseArr.push(cur);
-    }
+    if (letters.test(cur)) resultArr.push(cur.toLowerCase());
+    if (cur.match(numbs)) numsArr.push(cur);
   }
 
   resultArr = resultArr.sort().reverse();
   numsArr = numsArr.sort((a, b) => a < b);
-  return [...resultArr, ...numsArr, ...everythingElseArr].join('');
+  return [...resultArr, ...numsArr].join('');
 };
 
 const sortByWords = function(input) {
@@ -31,6 +24,7 @@ const sortByWords = function(input) {
     let curVal = escapedVal ? escapedVal.join('') : '';
     string[i] = curVal;
   }
+
   let result = string
     .sort()
     .reverse()
