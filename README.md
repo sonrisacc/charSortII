@@ -12,6 +12,7 @@ npm install
 3. Start charSortII in dev mode by running:
 
 ```sh
+npm run build
 npm run dev
 ```
 
