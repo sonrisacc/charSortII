@@ -5,10 +5,10 @@ const outputField = document.querySelector('input[name=response]');
 const inputString = document.querySelector('input[name=request]');
 
 const updateInputField = () => {
-  let res = postRequest(inputString.value);
-
-  outputField.value = res;
-  inputString.value = '';
+  postRequest(inputString.value).then(res => {
+    outputField.value = res.body;
+    inputString.value = '';
+  });
 };
 
 const changeDisplayMsg = () => {

@@ -16,10 +16,8 @@ const memoize = fun => {
   let cache = [];
   return input => {
     if (cache[input] !== undefined) return cache[input];
-    fun(input).then(res => {
-      cache[input] = res;
-      return cache[input];
-    });
+    cache[input] = fun(input);
+    return cache[input];
   };
 };
 
