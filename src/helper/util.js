@@ -1,5 +1,4 @@
 const postRequest = string => {
-  console.log('fire', string);
   let data = { inputStr: string };
   return fetch('/api/sort', {
     method: 'POST',
@@ -15,6 +14,7 @@ const postRequest = string => {
 const memoize = fun => {
   let cache = [];
   return input => {
+    // console.log('cache', cache);
     if (cache[input] !== undefined) return cache[input];
     cache[input] = fun(input);
     return cache[input];
