@@ -1,5 +1,6 @@
 const postRequest = string => {
-  let data = { inputStr: string.value };
+  console.log('fire', string);
+  let data = { inputStr: string };
   return fetch('/api/sort', {
     method: 'POST',
     body: JSON.stringify(data),
@@ -11,12 +12,17 @@ const postRequest = string => {
     .catch(error => console.error('Error:', error));
 };
 
-const test = a => {
-  return a + 3;
+const memoize = fun => {
+  let cache = [];
+  return input => {
+    if (cache[input] !== undefined) return cache[input];
+    fun(input).then(res => {
+      cache[input] = res;
+      return cache[input];
+    });
+  };
 };
 
-console.log(memoize(1).then(res => console.log(res)));
-console.log(memoize(2).then(res => console.log(res)));
-console.log(memoize(3).then(res => console.log(res)));
-console.log(memoize(1).then(res => console.log(res)));
-// module.exports = postRequest;
+const slowPostRequest = memoize(postRequest);
+
+module.exports = slowPostRequest;

@@ -4,8 +4,10 @@ const clickHandler = document.querySelector('.clickHandler');
 const outputField = document.querySelector('input[name=response]');
 const inputString = document.querySelector('input[name=request]');
 
-const updateInputField = string => {
-  outputField.value = string;
+const updateInputField = () => {
+  let res = postRequest(inputString.value);
+
+  outputField.value = res;
   inputString.value = '';
 };
 
@@ -19,9 +21,8 @@ const changeDisplayMsgBack = () => {
 
 clickHandler.addEventListener('mouseenter', () => changeDisplayMsg());
 clickHandler.addEventListener('mouseleave', () => changeDisplayMsgBack());
-clickHandler.addEventListener('click', () => postRequest(inputString));
+clickHandler.addEventListener('click', () => updateInputField());
 
 document.addEventListener('keypress', event => {
-  if (event.key == 'Enter')
-    postRequest(inputString).then(res => updateInputField(res.body));
+  if (event.key == 'Enter') updateInputField();
 });
