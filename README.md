@@ -1,5 +1,10 @@
 # charSortII
 
+![Alt text](./dist/sortAsentence.png 'Example charSortII Output')
+![Alt text](./dist/sortAword.png 'Example charSortII Output')
+
+> **NOTE** charSortII will escape symbols and numbers. When input is one word, it will sort by letters, when input is one sentence, it will sort by words. Have fun sorting!
+
 ## Initial Setup
 
 1. Fork and clone the repo
@@ -12,13 +17,14 @@ npm install
 3. Start charSortII in dev mode by running:
 
 ```sh
-npm run build
+npm run watch
 npm run dev
 ```
 
 or Start charSortII by running:
 
 ```sh
+npm run build
 npm start
 ```
 
@@ -27,5 +33,3 @@ npm start
 ```sh
 npm test
 ```
-
-> **NOTE** charSortII will escape symbols and numbers. When input is one word, it will sort by letters, when input is one sentence, it will sort by words. Have fun sorting!
