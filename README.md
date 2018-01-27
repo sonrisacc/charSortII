@@ -21,15 +21,17 @@ npm run watch
 npm run dev
 ```
 
-or Start charSortII by running:
+4. Run test by running:
+
+```sh
+npm test
+```
+
+5. Start charSortII by running:
 
 ```sh
 npm run build
 npm start
 ```
 
-4. Run test by running:
-
-```sh
-npm test
-```
+Now you may sort at http://localhost:8080
